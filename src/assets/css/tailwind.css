@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/*hidden scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
-    @apply bg-black text-white text-[15px];
+    @apply bg-black text-white text-[15px] antialiased;
 }

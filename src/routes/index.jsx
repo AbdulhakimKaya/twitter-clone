@@ -4,6 +4,10 @@ import Explore from "~/pages/explore/index.jsx";
 import Notifications from "~/pages/notifications/index.jsx";
 import NotFound from "~/pages/not-found/index.jsx";
 import MainLayout from "~/layouts/main/index.jsx";
+import Profile from "~/pages/profile/index.jsx";
+import Messages from "~/pages/messages/index.jsx";
+import Lists from "~/pages/lists/index.jsx";
+import Bookmarks from "~/pages/bookmarks/index.jsx";
 
 const routes = createBrowserRouter([
     {
@@ -21,6 +25,22 @@ const routes = createBrowserRouter([
             {
                 path: "notifications",
                 element: <Notifications/>
+            },
+            {
+                path: "messages",
+                element: <Messages/>
+            },
+            {
+                path: "lists",
+                element: <Lists/>
+            },
+            {
+                path: "bookmarks",
+                element: <Bookmarks/>
+            },
+            {
+                path: ":slug",
+                element: <Profile/>
             },
             {
                 path: "*",

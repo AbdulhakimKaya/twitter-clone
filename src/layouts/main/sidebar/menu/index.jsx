@@ -1,15 +1,17 @@
 import {NavLink} from "react-router-dom";
 import classNames from "classnames";
 import {mainMenu} from "~/utils/consts.jsx";
-import Button from "~/components/button/index.jsx";
 import More from "~/layouts/main/sidebar/menu/more/index.jsx";
 import New from "~/layouts/main/sidebar/menu/new/index.jsx";
+import {useAccount} from "~/store/auth/hooks.js";
 
 export default function Menu() {
+    const account = useAccount()
+
     return (
-        <nav className="mt-0.5 mb-1">
+        <nav className="mt-0.5 mb-1" key={account}>
             {mainMenu.map((menu, index) => (
-                <NavLink to={menu.path} key={index} className="py-[3px] block group">
+                <NavLink to={typeof menu.path === "function" ? menu.path() : menu.path} key={index} className="py-[3px] block group">
                     {({isActive}) => (
                         <div
                             className={

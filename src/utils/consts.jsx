@@ -1,3 +1,6 @@
+import store from "~/store/index.js";
+
+
 export const mainMenu = [
     {
         path: "/",
@@ -161,7 +164,9 @@ export const mainMenu = [
         }
     },
     {
-        path: "/username",
+        path: () => {
+            return `/${store.getState()?.auth?.currentAccount?.username}`
+        },
         title: "Profil",
         icon: {
             active: (
